@@ -8,7 +8,7 @@
 
 # Known issues
 - When your host lobby for the first time (only once) the first guest to join will be kicked out of the lobby. This only happens once, after that everything works fine.
-- When you change the resolution, all guests will be kicked out of the lobby.
+- When you change the screen resolution (Windows Settings), all guests will be kicked out of the lobby.
 
 ## 📥 Download
 - [Download latest version](https://github.com/luizhtss/smash-soda-zombie/releases/tag/V1)
@@ -28,7 +28,7 @@ You can find me at discord: `luizhenriquetargino`
 
 # Problemas Conhecidos
 - Quando você hospeda uma sala pela primeira vez (apenas uma vez), o primeiro convidado a entrar será expulso da sala. Isso ocorre apenas uma vez; depois disso, tudo funciona normalmente.
-- Quando você altera a resolução, todos os convidados serão expulsos da sala.
+- Quando você altera a resolução de exibição (configuração do Windows), todos os convidados serão expulsos da sala.
 
 ## 📥 Download
 - [Baixar a versão mais recente](https://github.com/luizhtss/smash-soda-zombie/releases/tag/V1)
