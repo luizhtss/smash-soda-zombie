@@ -1,7 +1,44 @@
-<b>
-Alas, Parsec have shut down their arcade service and third party application support, so the good times are over! Archiving this project for now, but I have heard murmurs of
-Parsec having internal discussions for ongoing support for Parsec Soda. Fingers crossed!
-</b>
+
+### English 🇺🇸
+## ⚠️ Warning ⚠️
+- This is a custom smash soda version that use alternative parsec login method, so you can use your own account to host a lobby and use all features of Smash Soda. This is a fork of [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda)
+- Before use this, read de ToS of Parsec: https://parsec.app/terms-of-service
+- I am not responsible for any damage caused by the use of this software.
+- Always download Smash Soda from this repository. Do not trust third party links.
+
+# Known issues
+- When your host lobby for the first time (only once) the first guest to join will be kicked out of the lobby. This only happens once, after that everything works fine.
+- When you change the resolution, all guests will be kicked out of the lobby.
+
+## 📥 Download
+- [Download latest version](
+
+## 💰 Donation
+If you like my modifications, you can [donate](https://www.paypal.com/donate/?business=CQAA37SECNJW6&no_recurring=0&item_name=Help+me+to+buy+a+coffe.&currency_code=BRL) a coffe to me. 
+
+## Contact 💌
+You can find me at discord: `luizhenriquetargino`
+
+### Português 🇧🇷
+## ⚠️ Aviso ⚠️
+- Esta é uma versão personalizada do Smash Soda que utiliza um método alternativo de login no Parsec, permitindo que você use sua própria conta para hospedar uma sala e utilizar todos os recursos do Smash Soda. Este é um fork de [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda).
+- Antes de usar isso, leia os Termos de Serviço do Parsec: https://parsec.app/terms-of-service.
+- Não sou responsável por qualquer dano causado pelo uso deste software.
+- Sempre faça o download do Smash Soda a partir deste repositório. Não confie em links de terceiros.
+
+# Problemas Conhecidos
+- Quando você hospeda uma sala pela primeira vez (apenas uma vez), o primeiro convidado a entrar será expulso da sala. Isso ocorre apenas uma vez; depois disso, tudo funciona normalmente.
+- Quando você altera a resolução, todos os convidados serão expulsos da sala.
+
+## 📥 Download
+- [Baixar a versão mais recente](
+
+## 💰 Doação
+Se você gostou das minhas modificações, pode [doar](https://www.paypal.com/donate/?business=CQAA37SECNJW6&no_recurring=0&item_name=Ajude-me+a+comprar+um+café.&currency_code=BRL) um café para mim. Para mais informações entre em contato no Discord.
+
+## Contato 💌
+Você pode me encontrar no Discord: `luizhenriquetargino`
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -50,29 +87,8 @@ Still lost? Check out the beginner guide <a href="https://github.com/MickeyUK/Sm
 Check out the comprehensive Wiki guide on how to use Smash Soda <a href="https://github.com/MickeyUK/SmashSoda/wiki/">HERE</a>!
 
 
-<table>
+<table align="center">
     <tr>
-        <td align="center">
-           <a href="https://github.com/MickeyUK/SmashSoda/releases">
-               <img src="https://raw.githubusercontent.com/MickeyUK/SmashSoda/master/github/Icons/download.png">
-               <div>Download</div>
-           </a>
-           <div>Download latest<br>version</div>
-        </td>
-        <td align="center">
-           <a href="https://github.com/MickeyUK/SmashSoda/issues">
-               <img width="60px" src="https://raw.githubusercontent.com/MickeyUK/SmashSoda/master/github/Icons/fix.png">
-               <div>Issues</div>
-           </a>
-           <div>Report issues and<br>request features</div>
-        </td>
-        <td align="center">
-           <a href="https://discord.gg/9ZHmwce">
-               <img width="60px" src="https://raw.githubusercontent.com/MickeyUK/SmashSoda/master/github/Icons/discord.png">
-               <div>Discord</div>
-           </a>
-           <div>Join the Discord<br>community!</div>
-        </td>
         <td align="center">
            <a href="https://github.com/MickeyUK/SmashSoda/wiki">
                <img width="60px" src="https://raw.githubusercontent.com/MickeyUK/SmashSoda/master/github/Icons/help.png">
@@ -127,15 +143,9 @@ Hey though, if you'd like to <a href="https://ko-fi.com/mickeyuk">buy me a coffe
 See `LICENSE.txt` for more information.
 
 
-## Contact
-
-
-Project Link: [https://github.com/MickeyUK/SmashSoda](https://github.com/MickeyUK/SmashSoda)
-
-
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
+
 
 * [MickeyUK] - [GitHub](https://github.com/MickeyUK) - Smash Soda Project Lead
 * [FlavioFS] - [GitHub](https://github.com/FlavioFS/) - Original Parsec Soda Developer
