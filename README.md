@@ -47,13 +47,7 @@ Você pode me encontrar no Discord: `luizhenriquetargino`
   <h3 align="center">Smash Soda</h3>
 
   <p align="center">
-    Open source Parsec Arcade hosting tool
-    <br />
-    <a href="https://github.com/MickeyUK/SmashSoda/releases">Latest Release</a>
-    ·
-    <a href="https://github.com/MickeyUK/SmashSoda/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/MickeyUK/SmashSoda/issues">Request Feature</a>
+    Open source Parsec Arcade hosting tool  
   </p>
 </p>
 
