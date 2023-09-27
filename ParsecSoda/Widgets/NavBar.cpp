@@ -96,6 +96,7 @@ void NavBar::render(
 		if (!hosting.isRunning())
 		{
 			showLogin = !showLogin;
+			MetadataCache::preferences.firstStartup = true;
 		}
 	}
 	TitleTooltipWidget::render("Log off", "Go back to log in screen.\n\n * Stop streaming before trying to log out.");
