@@ -224,16 +224,6 @@ void HostSettingsWidget::renderGeneral(HWND& hwnd) {
 
     ImGui::SameLine();
 
-    ImGui::BeginChild("##Public room child", ImVec2(size.x / 3, 50.0f));
-    ImGui::Text("PUBLIC ROOM");
-    ImGui::Indent(20);
-    if (ToggleIconButtonWidget::render(AppIcons::yes, AppIcons::no, _publicGame, AppColors::positive, AppColors::negative, ImVec2(22, 22))) {
-        _publicGame = !_publicGame;
-    }
-    ImGui::EndChild();
-
-    ImGui::SameLine();
-
     ImGui::BeginChild("##Latency child", ImVec2(size.x / 3, 50.0f));
     ImGui::Text("LATENCY LIMITER");
     if (ToggleIconButtonWidget::render(AppIcons::yes, AppIcons::no, _latencyLimiter, AppColors::positive, AppColors::negative, ImVec2(22, 22))) {

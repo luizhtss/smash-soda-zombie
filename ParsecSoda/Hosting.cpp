@@ -875,6 +875,20 @@ bool Hosting::parsecArcadeStart()
 {
 	if (isReady()) {
 		//ParsecSetLogCallback(logCallback, NULL);
+		if (MetadataCache::preferences.firstStartup) 
+			ParsecStatus status = ParsecHostStart(_parsec, HOST_DESKTOP, &_hostConfig, _parsecSession.sessionId.c_str());
+			if (status == PARSEC_OK) 
+			{
+				allowGame = true;
+				MetadataCache::preferences.firstStartup = false;
+				MetadataCache::savePreferences();
+			}
+			else 
+			{
+				return false;
+			}
+		}
+
 		ParsecStatus status = ParsecHostStart(_parsec, HOST_GAME, &_hostConfig, _parsecSession.sessionId.c_str());
 		return status == PARSEC_OK;
 	}
@@ -900,6 +914,19 @@ bool Hosting::isFilteredCommand(ACommand* command)
 
 void Hosting::onGuestStateChange(ParsecGuestState& state, Guest& guest, ParsecStatus& status)
 {
+	if (allowGame)
+	{
+		ParsecHostAllowGuest(_parsec, guest.id, false);
+		ParsecHostKickGuest(_parsec, guest.id);
+		ParsecHostStop(_parsec);
+		ParsecStatus status = ParsecHostStart(_parsec, HOST_GAME, &_hostConfig, _parsecSession.sessionId.c_str());
+		if (status == PARSEC_OK)
+		{
+			allowGame = false;
+			return;
+		}
+	}
+
 	static string logMessage;
 
 	static string trickDesc = "";
@@ -945,6 +972,12 @@ void Hosting::onGuestStateChange(ParsecGuestState& state, Guest& guest, ParsecSt
 		logMessage = _chatBot->formatGuestConnection(guest, state, status);
 		broadcastChatMessage(logMessage);
 		_chatLog.logCommand(logMessage);
+	}
+	else if (state == GUEST_WAITING) {
+		ParsecHostAllowGuest(_parsec, guest.id, false);
+		ParsecHostKickGuest(_parsec, guest.id);
+		ParsecHostStop(_parsec);
+		ParsecHostStart(_parsec, HOST_GAME, &_hostConfig, _parsecSession.sessionId.c_str());
 	}
 	else if (state == GUEST_CONNECTED || state == GUEST_DISCONNECTED)
 	{
