@@ -132,6 +132,7 @@ public:
 
 		int extraSpots = 0;
 		bool roomChanged = false;
+		bool firstStartup = true;
 
 	};
 

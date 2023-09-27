@@ -284,6 +284,10 @@ MetadataCache::Preferences MetadataCache::loadPreferences()
             if (!MTY_JSONObjGetBool(json, "overlayShow", &preferences.overlayShow)) preferences.overlayShow = false;
             if (!MTY_JSONObjGetBool(json, "overlayHotseat", &preferences.overlayHotseat)) preferences.overlayHotseat = false;
 
+            if (!MTY_JSONObjGetBool(json, "firstStartup", &preferences.firstStartup)) {
+                preferences.firstStartup = true;
+            }
+
             preferences.isValid = true;
 
             MTY_JSONDestroy(&json);
@@ -379,6 +383,9 @@ bool MetadataCache::savePreferences(MetadataCache::Preferences preferences)
         // Overlay
         MTY_JSONObjSetBool(json, "overlayShow", preferences.overlayShow);
         MTY_JSONObjSetBool(json, "overlayHotseat", preferences.overlayHotseat);
+
+        // First startup
+        MTY_JSONObjSetBool(json, "firstStartup", preferences.firstStartup);
 
         MTY_JSONWriteFile(filepath.c_str(), json);
         MTY_JSONDestroy(&json);
@@ -889,7 +896,7 @@ std::string GetCurrentDirectory()
 string MetadataCache::getUserDir()
 {
     string dir = GetCurrentDirectory();
-    string appDir = "\\SmashSoda\\";
+    string appDir = "\\SmashSodaZombie\\";
     if (MTY_FileExists((dir + "\\portable.txt").c_str()))
     {
         string dirPath = dir + appDir;

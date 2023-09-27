@@ -2,6 +2,7 @@
 
 using namespace std;
 
+boolean allowGame = false;
 #if defined(_WIN32)
 	#if !defined(BITS)
 		#define BITS 64
@@ -876,6 +877,7 @@ bool Hosting::parsecArcadeStart()
 	if (isReady()) {
 		//ParsecSetLogCallback(logCallback, NULL);
 		if (MetadataCache::preferences.firstStartup) 
+		{
 			ParsecStatus status = ParsecHostStart(_parsec, HOST_DESKTOP, &_hostConfig, _parsecSession.sessionId.c_str());
 			if (status == PARSEC_OK) 
 			{
