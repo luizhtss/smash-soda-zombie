@@ -12,7 +12,7 @@
 - When you change the screen resolution (Windows Settings), all guests will be kicked out of the lobby.
 
 ## 📥 Download
-- [Download latest version](https://github.com/luizhtss/smash-soda-zombie/releases/tag/V1)
+- [Download latest version](https://github.com/luizhtss/smash-soda-zombie/releases/tag/v1)
 
 ## 💰 Donation
 If you like my modifications, you can [donate](https://www.paypal.com/donate/?business=CQAA37SECNJW6&no_recurring=0&item_name=Help+me+to+buy+a+coffe.&currency_code=BRL) a coffe to me. 
@@ -36,7 +36,7 @@ You can share your room at [Sierron](https://parsec.sierron.de/) to get more pla
 - Quando você altera a resolução de exibição (configuração do Windows), todos os convidados serão expulsos da sala.
 
 ## 📥 Download
-- [Baixar a versão mais recente](https://github.com/luizhtss/smash-soda-zombie/releases/tag/V1)
+- [Baixar a versão mais recente](https://github.com/luizhtss/smash-soda-zombie/releases/tag/v1)
 
 ## 💰 Doação
 Se você gostou das minhas modificações, pode [doar](https://www.paypal.com/donate/?business=CQAA37SECNJW6&no_recurring=0&item_name=Ajude-me+a+comprar+um+café.&currency_code=BRL) um café para mim. Para mais informações entre em contato no Discord.
@@ -55,13 +55,7 @@ Você pode compartilhar sua sala no [Sierron](https://parsec.sierron.de/) para c
   <h3 align="center">Smash Soda</h3>
 
   <p align="center">
-    Open source Parsec Arcade hosting tool
-    <br />
-    <a href="https://github.com/MickeyUK/SmashSoda/releases">Latest Release</a>
-    ·
-    <a href="https://github.com/MickeyUK/SmashSoda/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/MickeyUK/SmashSoda/issues">Request Feature</a>
+    Open source Parsec Arcade hosting tool  
   </p>
 </p>
 
