@@ -450,7 +450,7 @@ vector<Thumbnail>& ParsecSession::getThumbnails()
 void ParsecSession::loadThumbnails()
 {
 	_thumbnailList.load();
-	_thumbnailList.add(Thumbnail("1wdoHfhhZH5lPuZCwGBete0HIAj", "Parsec Soda"));
+	//_thumbnailList.add(Thumbnail("1wdoHfhhZH5lPuZCwGBete0HIAj", "Parsec Soda"));
 }
 
 void ParsecSession::saveThumbnails()
