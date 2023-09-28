@@ -5,6 +5,7 @@
 - Before use this, read de ToS of Parsec: https://parsec.app/terms-of-service
 - I am not responsible for any damage caused by the use of this software.
 - Always download Smash Soda from this repository. Do not trust third party links.
+- Close parsec before open Smash Soda Zombie. Certify in bar task that parsec is not running.
 
 # Known issues
 - When your host lobby for the first time (only once) the first guest to join will be kicked out of the lobby. This only happens once, after that everything works fine.
@@ -19,12 +20,16 @@ If you like my modifications, you can [donate](https://www.paypal.com/donate/?bu
 ## Contact 💌
 You can find me at discord: `luizhenriquetargino`
 
+## Extras 🎁
+You can share your room at [Sierron](https://parsec.sierron.de/) to get more players.
+
 ### Português 🇧🇷
 ## ⚠️ Aviso ⚠️
 - Esta é uma versão personalizada do Smash Soda que utiliza um método alternativo de login no Parsec, permitindo que você use sua própria conta para hospedar uma sala e utilizar todos os recursos do Smash Soda. Este é um fork de [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda).
 - Antes de usar isso, leia os Termos de Serviço do Parsec: https://parsec.app/terms-of-service.
 - Não sou responsável por qualquer dano causado pelo uso deste software.
 - Sempre faça o download do Smash Soda a partir deste repositório. Não confie em links de terceiros.
+- Feche o parsec antes de abrir o Smash Soda Zombie. Certifique-se na barra de tarefas que o parsec não está sendo executado.
 
 # Problemas Conhecidos
 - Quando você hospeda uma sala pela primeira vez (apenas uma vez), o primeiro convidado a entrar será expulso da sala. Isso ocorre apenas uma vez; depois disso, tudo funciona normalmente.
@@ -38,6 +43,9 @@ Se você gostou das minhas modificações, pode [doar](https://www.paypal.com/do
 
 ## Contato 💌
 Você pode me encontrar no Discord: `luizhenriquetargino`
+
+## Extras 🎁
+Você pode compartilhar sua sala no [Sierron](https://parsec.sierron.de/) para conseguir mais jogadores.
 
 
 <!-- PROJECT LOGO -->
