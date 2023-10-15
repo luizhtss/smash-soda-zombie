@@ -1,9 +1,7 @@
 
 ### English 🇺🇸
 ## ⚠️ Warning ⚠️
-- This is a custom smash soda version that use alternative parsec login method, so you can use your own account to host a lobby and use all features of Smash Soda. This is a fork of [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda)
-- Before use this, read de ToS of Parsec: https://parsec.app/terms-of-service
-- I am not responsible for any damage caused by the use of this software.
+- This is a fork of [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda)
 - Always download Smash Soda from this repository. Do not trust third party links.
 - Close parsec before open Smash Soda Zombie. Certify in bar task that parsec is not running.
 
@@ -25,9 +23,7 @@ You can share your room at [Sierron](https://parsec.sierron.de/) to get more pla
 
 ### Português 🇧🇷
 ## ⚠️ Aviso ⚠️
-- Esta é uma versão personalizada do Smash Soda que utiliza um método alternativo de login no Parsec, permitindo que você use sua própria conta para hospedar uma sala e utilizar todos os recursos do Smash Soda. Este é um fork de [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda).
-- Antes de usar isso, leia os Termos de Serviço do Parsec: https://parsec.app/terms-of-service.
-- Não sou responsável por qualquer dano causado pelo uso deste software.
+- Este é um fork de [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda).
 - Sempre faça o download do Smash Soda a partir deste repositório. Não confie em links de terceiros.
 - Feche o parsec antes de abrir o Smash Soda Zombie. Certifique-se na barra de tarefas que o parsec não está sendo executado.
 
