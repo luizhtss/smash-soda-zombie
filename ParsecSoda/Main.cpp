@@ -42,10 +42,10 @@
 using namespace std;
 
 // Data
-static ID3D11Device*            g_pd3dDevice = NULL;
-static ID3D11DeviceContext*     g_pd3dDeviceContext = NULL;
-static IDXGISwapChain*          g_pSwapChain = NULL;
-static ID3D11RenderTargetView*  g_mainRenderTargetView = NULL;
+static ID3D11Device* g_pd3dDevice = NULL;
+static ID3D11DeviceContext* g_pd3dDeviceContext = NULL;
+static IDXGISwapChain* g_pSwapChain = NULL;
+static ID3D11RenderTargetView* g_mainRenderTargetView = NULL;
 Hosting g_hosting;
 
 // Forward declarations of helper functions
@@ -56,7 +56,7 @@ void CleanupRenderTarget();
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 // Main code
-int CALLBACK WinMain( _In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
+int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
     // Create application window
     //ImGui_ImplWin32_EnableDpiAwareness();
@@ -78,7 +78,7 @@ int CALLBACK WinMain( _In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _I
     wc.hIconSm = NULL;
     ::RegisterClassEx(&wc);
     HWND hwnd = ::CreateWindow(
-        wc.lpszClassName, _T("Smash Soda"), WS_OVERLAPPEDWINDOW,
+        wc.lpszClassName, _T("Smash Soda Zombie"), WS_OVERLAPPEDWINDOW,
         MetadataCache::preferences.windowX, MetadataCache::preferences.windowY,
         MetadataCache::preferences.windowW, MetadataCache::preferences.windowH,
         NULL, NULL, wc.hInstance, NULL
@@ -125,8 +125,8 @@ int CALLBACK WinMain( _In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _I
     g_hosting.init();
 
     HostSettingsWidget hostSettingsWindow(g_hosting, [&hwnd](bool isRunning) {
-            SetWindowTextW(hwnd, isRunning ? L"⚫ [LIVE] Smash Soda" : L"Smash Soda");
-    });
+        SetWindowTextW(hwnd, isRunning ? L"⚫ [LIVE] Smash Soda Zombie" : L"Smash Soda Zombie");
+        });
     LoginWidget loginWindow(g_hosting, hostSettingsWindow);
     LogWidget logWindow(g_hosting);
     GuestListWidget guestsWindow(g_hosting);
@@ -151,7 +151,7 @@ int CALLBACK WinMain( _In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _I
     //ChatWidget chatWindow(g_hosting, [&hwnd, &fi]() {
     //    FlashWindowEx(&fi);
     //});
-    
+
     //ITaskbarList3* m_pTaskBarlist;
     //CoCreateInstance(
     //    CLSID_TaskbarList, NULL, CLSCTX_ALL,
@@ -187,7 +187,7 @@ int CALLBACK WinMain( _In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _I
         g_hosting.fetchAccountData(true);
         showLogin = !g_hosting.getSession().isValid();
         t.detach();
-    });
+        });
 
     // =====================================================================
     //  Register Hotkeys
@@ -375,7 +375,7 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
-        return true;    
+        return true;
     switch (msg)
     {
     case WM_SIZE:
