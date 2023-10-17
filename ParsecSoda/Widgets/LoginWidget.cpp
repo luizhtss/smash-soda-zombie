@@ -77,10 +77,7 @@ void LoginWidget::render(bool& showLogin)
         ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.25f, 0.00f, 0.50f, 1.00f));
         ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.19f, 0.00f, 0.38f, 1.00f));
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.35f, 0.00f, 0.70f, 1.00f));
-        if (ImGui::Button(
-            "Log in##Login Button",
-            ImVec2(w, 50)
-        ))
+        if (true)
         {
 #if USE_PARSEC_PERSONAL_API
             attemptLoginPersonal(showLogin);
@@ -99,11 +96,16 @@ void LoginWidget::render(bool& showLogin)
     }
     else
     {
+
         ImGui::SetCursorPosX((size.x - 100.0f) * 0.5f);
         LoadingRingWidget::render();
 
         ImGui::Dummy(ImVec2(0, 120));
-
+#if USE_PARSEC_PERSONAL_API
+        attemptLoginPersonal(showLogin);
+#else
+        attemptLogin3rd(showLogin);
+#endif
         if (_showCancelButton)
         {
             AppColors::pushInput();
@@ -245,44 +247,16 @@ void LoginWidget::attemptLogin3rd(bool& showLogin)
         _isLoginLocked = true;
         LoadingRingWidget::render(true);
         _loginThread = thread([&]() {
-            _auth = _hosting.getSession().authenticate();
-
-            if (_auth.success)
-            {
-                string uri = string(_auth.verificationUri) + "/" + _auth.userCode;
-                wstring wuri(&uri[0], &uri[uri.size()]);
-                ShellExecute(0, 0, wuri.c_str(), 0, 0, SW_SHOW);
+            _showCancelButton = false;
+            bool status = _hosting.getSession().loadSessionCache();
+            while (!status) {
+                Sleep(1500);
+                status = _hosting.getSession().loadSessionCache();
             }
 
-            // Minimum auth cooldown
-            Sleep((_auth.interval+1) * 1000);
-            ParsecSession::SessionStatus status;
-
-            _showCancelButton = true;
-
-            bool done = false;
-            while (!done && !_sessionCancelled)
-            {
-                status = _hosting.getSession().pollSession(_auth);
-                switch (status)
-                {
-                case ParsecSession::SessionStatus::PENDING:
-                    Sleep(1500);
-                    break;
-                case ParsecSession::SessionStatus::APPROVED:
-                    done = true;
-                    showLogin = false;
-                    break;
-                case ParsecSession::SessionStatus::INVALID:
-                default:
-                    done = true;
-                    break;
-                }
-            }
-
-            _hosting.fetchAccountData();
-            _hostSettingsWidget.updateSecretLink();
+            showLogin = false;
             _isLoginLocked = false;
+            _hostSettingsWidget.updateSecretLink();
             _loginThread.detach();
         });
     }
