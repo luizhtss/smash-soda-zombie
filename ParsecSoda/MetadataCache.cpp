@@ -27,15 +27,23 @@ MetadataCache::SessionCache MetadataCache::loadSessionCache()
         if (MTY_FileExists(filepath.c_str()))
         {
             size_t size;
-            const char* encryptedContent;
-            encryptedContent = (char*)MTY_ReadFile(filepath.c_str(), &size);
+            const char* fileContent;
+            fileContent = (char*)MTY_ReadFile(filepath.c_str(), &size);
+            MTY_JSON* json = MTY_JSONParse(fileContent);
+            bool encryptedContent = false;
+            if (json == nullptr)
+            {
+                char originalText[256];
+                MTY_AESGCM* ctx = MTY_AESGCMCreate(_key.c_str());
+                char tag[16] = "ParsecSodaTag**";
 
-            char originalText[256];
-            MTY_AESGCM* ctx = MTY_AESGCMCreate(_key.c_str());
-            char tag[16] = "ParsecSodaTag**";
+                bool decrypted = !MTY_AESGCMDecrypt(ctx, _nonce.c_str(), fileContent, size, tag, (void*)originalText);
+                json = MTY_JSONParse(originalText);
+                MTY_AESGCMDestroy(&ctx);
+                encryptedContent = true;
 
-            MTY_AESGCMDecrypt(ctx, _nonce.c_str(), encryptedContent, size, tag, (void*)originalText);
-            MTY_JSON* json = MTY_JSONParse(originalText);
+            }
+            
             if (json != nullptr)
             {
                 char sessionID[128];
@@ -43,12 +51,16 @@ MetadataCache::SessionCache MetadataCache::loadSessionCache()
                 uint32_t type = (uint32_t)SessionCache::SessionType::THIRD;
                 uint32_t expiry = 0, start = 0;
 
-                bool success =
+                bool success = encryptedContent ?
                     MTY_JSONObjGetString(json, "sessionID", sessionID, 128)
                     && MTY_JSONObjGetString(json, "peerID", peerID, 64)
                     && MTY_JSONObjGetUInt(json, "type", &type)
                     && MTY_JSONObjGetUInt(json, "start", &start)
                     && MTY_JSONObjGetUInt(json, "expiry", &expiry)
+                    :
+                    MTY_JSONObjGetString(json, "session_id", sessionID, 128)
+                    && MTY_JSONObjGetString(json, "host_peer_id", peerID, 64)
+
                     ;
 
                 if (success)
@@ -56,15 +68,25 @@ MetadataCache::SessionCache MetadataCache::loadSessionCache()
                     result.isValid = true;
                     result.sessionID = sessionID;
                     result.peerID = peerID;
-                    result.type = (SessionCache::SessionType)type;
-                    result.start = start;
-                    result.expiry = expiry;
+              
+                    if (encryptedContent) 
+                    {
+                        result.start = start;
+                        result.expiry = expiry;
+                        result.type = (SessionCache::SessionType)type;
+                    }
+                    else
+                    {
+						result.start  = MTY_GetTime();
+						result.expiry = result.start + 6000;
+						result.type = (SessionCache::SessionType)0;
+                        saveSessionCache(result);
+					}
                 }
 
                 MTY_JSONDestroy(&json);
             }
 
-            MTY_AESGCMDestroy(&ctx);
         }
     }
 
