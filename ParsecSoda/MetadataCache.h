@@ -219,6 +219,8 @@ public:
 	static SessionCache loadSessionCache();
 	static bool saveSessionCache(SessionCache sessionCache);
 
+	static bool deleteSessionCache();
+
 	static Preferences loadPreferences();
 	static bool savePreferences(Preferences preferences);
 	static bool savePreferences();

@@ -1,6 +1,6 @@
 #include "VersionWidget.h"
 
-std::string VersionWidget::version = "2.58";
+std::string VersionWidget::version = "2.60";
 
 bool VersionWidget::render()
 {
@@ -25,7 +25,7 @@ bool VersionWidget::render()
     ImGui::SameLine();
     ImGui::Text("%.0f", ImGui::GetIO().Framerate);
 
-    std::string versionString = "Smash Soda v. " + version;
+    std::string versionString = "Smash Soda Zombie v. " + version;
     ImGui::Text(versionString.c_str());
     AppStyle::pop();
     ImGui::End();

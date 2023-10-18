@@ -68,34 +68,6 @@ void LoginWidget::render(bool& showLogin)
         _showError = false;
     }
 
-    if (!_isLoginLocked)
-    {
-        ImGui::Dummy(ImVec2(0, 30));
-
-        AppColors::pushInput();
-        AppFonts::pushTitle();
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.25f, 0.00f, 0.50f, 1.00f));
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.19f, 0.00f, 0.38f, 1.00f));
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.35f, 0.00f, 0.70f, 1.00f));
-        if (true)
-        {
-#if USE_PARSEC_PERSONAL_API
-            attemptLoginPersonal(showLogin);
-#else
-            attemptLogin3rd(showLogin);
-#endif
-        }
-        ImGui::PopStyleColor();
-        ImGui::PopStyleColor();
-        ImGui::PopStyleColor();
-        AppFonts::pop();
-        AppColors::pop();
-        if (ImGui::IsItemHovered()) ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
-
-        renderCreateAccount(size.x);
-    }
-    else
-    {
 
         ImGui::SetCursorPosX((size.x - 100.0f) * 0.5f);
         LoadingRingWidget::render();
@@ -127,7 +99,7 @@ void LoginWidget::render(bool& showLogin)
             AppColors::pop();
             if (ImGui::IsItemHovered()) ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
         }
-    }
+    
 
     AppStyle::pop();
 

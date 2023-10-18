@@ -131,6 +131,24 @@ bool MetadataCache::saveSessionCache(SessionCache sessionCache)
     return result;
 }
 
+bool MetadataCache::deleteSessionCache()
+{
+	bool result = false;
+	string dirPath = getUserDir();
+
+    if (!dirPath.empty())
+    {
+		string filepath = dirPath + "session.json";
+
+        if (MTY_FileExists(filepath.c_str()))
+        {
+			result = MTY_DeleteFile(filepath.c_str());
+		}
+	}
+
+	return result;
+}
+
 MetadataCache::Preferences MetadataCache::loadPreferences()
 {
     preferences = Preferences();
