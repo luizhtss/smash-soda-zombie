@@ -4,6 +4,7 @@
 - This is a fork of [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda)
 - Always download Smash Soda from this repository. Do not trust third party links.
 - Close parsec before open Smash Soda Zombie. Certify in bar task that parsec is not running.
+- You need this [script](https://github.com/luizhtss/ps-soda-auth) to authenticate your parsec account. 
 
 # Known issues
 - When your host lobby for the first time (only once) the first guest to join will be kicked out of the lobby. This only happens once, after that everything works fine.
@@ -30,6 +31,7 @@ You can share your room at [Sierron](https://parsec.sierron.de/) to get more pla
 - Este é um fork de [MickeyUK/SmashSoda](https://github.com/Smash-Soda-Team/smash-soda).
 - Sempre faça o download do Smash Soda a partir deste repositório. Não confie em links de terceiros.
 - Feche o parsec antes de abrir o Smash Soda Zombie. Certifique-se na barra de tarefas que o parsec não está sendo executado.
+- Você precisa deste [script](https://github.com/luizhtss/ps-soda-auth) para logar sua conta parsec.
 
 # Problemas Conhecidos
 - Quando você hospeda uma sala pela primeira vez (apenas uma vez), o primeiro convidado a entrar será expulso da sala. Isso ocorre apenas uma vez; depois disso, tudo funciona normalmente.
