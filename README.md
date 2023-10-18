@@ -9,11 +9,15 @@
 - When your host lobby for the first time (only once) the first guest to join will be kicked out of the lobby. This only happens once, after that everything works fine.
 - When you change the screen resolution (Windows Settings), all guests will be kicked out of the lobby.
 
+## Instructions
+- Watch this [video](https://youtu.be/CBBJb1QgBms) to learn how to use Smash Soda Zombie.
+
 ## 📥 Download
 - [Download latest version](https://github.com/luizhtss/smash-soda-zombie/releases/tag/latest)
 
 ## 💰 Donation
 If you like my modifications, you can [donate](https://www.paypal.com/donate/?business=CQAA37SECNJW6&no_recurring=0&item_name=Help+me+to+buy+a+coffe.&currency_code=BRL) a coffe to me. 
+
 
 ## Contact 💌
 You can find me at discord: `luizhenriquetargino`
@@ -30,6 +34,9 @@ You can share your room at [Sierron](https://parsec.sierron.de/) to get more pla
 # Problemas Conhecidos
 - Quando você hospeda uma sala pela primeira vez (apenas uma vez), o primeiro convidado a entrar será expulso da sala. Isso ocorre apenas uma vez; depois disso, tudo funciona normalmente.
 - Quando você altera a resolução de exibição (configuração do Windows), todos os convidados serão expulsos da sala.
+
+# Instruções
+- Assista a este [vídeo](https://youtu.be/CBBJb1QgBms) para aprender a usar o Smash Soda Zombie.
 
 ## 📥 Download
 - [Baixar a versão mais recente](https://github.com/luizhtss/smash-soda-zombie/releases/tag/latest)
